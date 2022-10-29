@@ -2,7 +2,7 @@ import './home.css';
 
 export default function Home() {
   return (
-    <div>
+    <div className="home">
       <div className="content">
         <h1>What is React Query?</h1>
         <p>

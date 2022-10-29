@@ -3,22 +3,26 @@ import reactQueryLogo from '../assets/react-query-logo.svg';
 import { useQuery } from '@tanstack/react-query';
 import fetchCharacters from '../hooks/useFectchCharacters';
 import Character from '../components/Character';
+import { useState } from 'react';
 
 const ReactQuery = () => {
-  const { data, isLoading, isFetching, isError, error } = useQuery(
-    ['richAndMorty'],
-    () => fetchCharacters(),
-    {}
+  const [page, setPage] = useState(1);
+  const { data, isLoading, isError, error } = useQuery(
+    ['richAndMorty', page],
+    () => fetchCharacters(page),
+    {
+      keepPreviousData: true,
+    }
   );
 
-  if (isLoading || isFetching) {
+  if (isLoading) {
     return (
-      <div class="loader-3">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
+      <div className="loader-3">
+        <div className="circle"></div>
+        <div className="circle"></div>
+        <div className="circle"></div>
+        <div className="circle"></div>
+        <div className="circle"></div>
       </div>
     );
   }
@@ -32,8 +36,23 @@ const ReactQuery = () => {
           src={reactQueryLogo}
           alt="react-query-logo"
         />
-        <h2>Rick And Morty Characters</h2>
+        <h2>Rick And Morty Characters with React Query</h2>
       </div>
+      <button
+        className="btn"
+        onClick={() => setPage((old) => old - 1)}
+        disabled={page === 1}
+      >
+        Previous
+      </button>
+      <span className="pageNum">{page}</span>
+      <button
+        className="btn"
+        disabled={!data.info.next}
+        onClick={() => setPage((old) => old + 1)}
+      >
+        Next
+      </button>
       <div className="container">
         {data &&
           data.results.map((character) => {

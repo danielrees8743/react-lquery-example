@@ -11,10 +11,32 @@
 }
 
 .react-query-img {
-  width: 128px;
+  width: 100px;
   transition: all 2s ease-in-out;
 }
 
 .react-query-img:hover {
   transform: rotate(360deg);
+}
+.btn {
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background-color: #011b2d;
+  color: #fff;
+  font-size: 1rem;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.btn:disabled {
+  background-color: #ddd;
+  color: #000;
+  cursor: not-allowed;
+}
+.pageNum {
+  font-size: 1.3rem;
+  margin: 0 20px;
+  font-weight: 600;
 }

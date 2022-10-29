@@ -1,5 +1,6 @@
 .useEffect {
 }
-.useEffect img {
-  width: 365px;
+
+.useEffect h2 {
+  font-size: 1.7rem;
 }
