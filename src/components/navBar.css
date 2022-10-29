@@ -1,0 +1,34 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px;
+}
+.nav ul {
+  display: flex;
+  margin-right: auto;
+  list-style: none;
+}
+.nav li {
+  margin-right: 20px;
+}
+.nav a {
+  text-decoration: none;
+  color: #ddd;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.nav a:hover {
+  color: #fff;
+}
+
+.nav img {
+  width: 500px;
+  opacity: 0.5;
+  border: 1px solid white;
+}
+
+.nav img:hover {
+  opacity: 1;
+  transform: rotate(3deg);
+}
