@@ -5,8 +5,12 @@ export default function Character({ character }) {
     <>
       <img src={character.image} alt={character.name} />
       <h3>{character.name}</h3>
-      <p>Species: {character.species}</p>
-      <p>Status: {character.status}</p>
+      <p>
+        Species: <span>{character.species}</span>
+      </p>
+      <p>
+        Status: <span>{character.status}</span>
+      </p>
     </>
   );
 }

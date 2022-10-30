@@ -4,10 +4,11 @@ import { useQuery } from '@tanstack/react-query';
 import fetchCharacters from '../hooks/useFectchCharacters';
 import Character from '../components/Character';
 import { useState } from 'react';
+import Loader from '../components/Loader';
 
 const ReactQuery = () => {
   const [page, setPage] = useState(1);
-  const { data, isLoading, isError, error } = useQuery(
+  const { data, isLoading, isPreviousData, isError, error } = useQuery(
     ['richAndMorty', page],
     () => fetchCharacters(page),
     {
@@ -15,18 +16,9 @@ const ReactQuery = () => {
     }
   );
 
-  if (isLoading) {
-    return (
-      <div className="loader-3">
-        <div className="circle"></div>
-        <div className="circle"></div>
-        <div className="circle"></div>
-        <div className="circle"></div>
-        <div className="circle"></div>
-      </div>
-    );
-  }
-  if (isError) return <h1>Error: {error.message}</h1>;
+  if (isLoading) return <Loader />;
+
+  if (isError) return <h1 className="error">Error: {error.message}</h1>;
 
   return (
     <>
@@ -48,7 +40,7 @@ const ReactQuery = () => {
       <span className="pageNum">{page}</span>
       <button
         className="btn"
-        disabled={!data.info.next}
+        disabled={isPreviousData || !data.info.next}
         onClick={() => setPage((old) => old + 1)}
       >
         Next

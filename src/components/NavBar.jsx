@@ -1,11 +1,13 @@
 import './navBar.css';
 import { Link } from 'react-router-dom';
-import img from '../assets/repo-dark.png';
+import img from '../assets/repo-dark-removebg.png';
 
 export default function NavBar() {
   return (
     <div className="nav">
-      <img src={img} alt="react-query-asset" />
+      <a href="https://tanstack.com/" target="_blank" rel="noreferrer">
+        <img src={img} alt="react-query-asset" />
+      </a>
       <ul>
         <li>
           <Link to="/">Home</Link>

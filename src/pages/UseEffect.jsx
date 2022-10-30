@@ -1,7 +1,8 @@
 import './useEffect.css';
 import { useState, useEffect } from 'react';
 import Character from '../components/Character';
-import fetchCharacters from '../hooks/useFectchCharacters';
+import reactLogo from '../assets/react-logo.svg';
+import Loader from '../components/Loader';
 
 export default function UseEffect() {
   const [page, setPage] = useState(1);
@@ -18,9 +19,16 @@ export default function UseEffect() {
         const res = await fetch(
           `https://rickandmortyapi.com/api/character/?page=${page}`
         );
+
+        if (!res.ok) {
+          throw new Error(`Something went wrong please check: ${res.url}`);
+        }
         const data = await res.json();
+        setIsLoading(false);
         setData(data);
+        setError(null);
       } catch (error) {
+        setIsLoading(false);
         setIsError(true);
         setError(error);
       }
@@ -31,17 +39,10 @@ export default function UseEffect() {
 
   return (
     <div className="useEffect">
+      <img className="useEffect-logo" src={reactLogo} alt="" />
       <h2>Rick and Morty with the UseEffect hook</h2>
-      {isLoading && (
-        <div className="loader-3">
-          <div className="circle"></div>
-          <div className="circle"></div>
-          <div className="circle"></div>
-          <div className="circle"></div>
-          <div className="circle"></div>
-        </div>
-      )}
-      {isError && <h1>Error: {error.message}</h1>}
+      {isLoading && <Loader />}
+      {isError && <h1 className="error">Error: {error.message}</h1>}
       <button
         className="btn"
         onClick={() => setPage((old) => old - 1)}

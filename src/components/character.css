@@ -13,11 +13,13 @@
   border: 1px solid #ddd;
   margin: 10px 5px;
   background-color: #011b2d;
+  border-radius: 10px 10px;
 }
 
 .card img {
   width: 200px;
   border-bottom: 1px solid #ddd;
+  border-radius: 10px;
 }
 
 .card h3 {
@@ -28,7 +30,16 @@
 }
 
 .card p {
-  font-size: 1rem;
-  color: #fff;
-  margin: 10px 0;
+  font-size: 1.1rem;
+  color: #ccc;
+  margin: 5px 0;
+  font-weight: 500;
+}
+.card p:last-child {
+  margin-bottom: 15px;
+}
+.card span {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #bebebe;
 }
