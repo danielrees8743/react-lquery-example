@@ -1,0 +1,11 @@
+.infinitescroll {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.infinitescroll h2 {
+  font-size: 1.7rem;
+}

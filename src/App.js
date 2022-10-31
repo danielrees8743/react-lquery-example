@@ -6,8 +6,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import UseEffect from './pages/UseEffect';
 import ReactQuery from './pages/ReactQuery';
-// import img from './assets/repo-dark.png';
 import NavBar from './components/NavBar';
+import InfiniteScroll from './pages/InfiniteScroll';
 
 const queryClient = new QueryClient();
 
@@ -21,6 +21,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/use-effect" element={<UseEffect />} />
             <Route path="/react-query" element={<ReactQuery />} />
+            <Route path="/infinite-scroll" element={<InfiniteScroll />} />
           </Routes>
         </div>
       </BrowserRouter>

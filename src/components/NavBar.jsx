@@ -24,6 +24,9 @@ export default function NavBar() {
         <li>
           <Link to="react-query">React Query Example</Link>
         </li>
+        <li>
+          <Link to="infinite-scroll">Infinite Scroll Example</Link>
+        </li>
       </ul>
     </div>
   );

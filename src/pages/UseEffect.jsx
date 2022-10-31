@@ -38,8 +38,6 @@ export default function UseEffect() {
     fetchCharacters();
   }, [page]);
 
-  console.log(data);
-
   return (
     <div className="useEffect">
       <img className="useEffect-logo" src={reactLogo} alt="" />
