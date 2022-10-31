@@ -1,10 +1,20 @@
 import './reactQuery.css';
 import reactQueryLogo from '../assets/react-query-logo.svg';
 import { useQuery } from '@tanstack/react-query';
-import fetchCharacters from '../hooks/useFectchCharacters';
+// import fetchCharacters from '../hooks/useFectchCharacters';
 import Character from '../components/Character';
 import { useState } from 'react';
 import Loader from '../components/Loader';
+
+const fetchCharacters = async (page) => {
+  const res = await fetch(
+    `https://rickandmortyapi.com/api/character/?page=${page}`
+  );
+  if (!res.ok) {
+    throw new Error(`Something went wrong`);
+  }
+  return await res.json();
+};
 
 const ReactQuery = () => {
   const [page, setPage] = useState(1);
@@ -37,7 +47,9 @@ const ReactQuery = () => {
       >
         Previous
       </button>
-      <span className="pageNum">{page}</span>
+      <span className="pageNum">
+        {page} of {data.info.pages}
+      </span>
       <button
         className="btn"
         disabled={isPreviousData || !data.info.next}

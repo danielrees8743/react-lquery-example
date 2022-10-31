@@ -5,12 +5,16 @@ export default function Home() {
     <div className="home">
       <div className="content">
         <h1>What is React Query?</h1>
-        <p>
-          React Query is often described as the missing data-fetching library
-          for React, but in more technical terms, it makes fetching, caching,
-          synchronizing and updating server state in your React applications a
-          breeze.
-        </p>
+
+        <iframe
+          title="react-query presentation"
+          className="presentaion"
+          src="https://docs.google.com/presentation/d/e/2PACX-1vQbM5fXVCs4sLUHCZmYpzGl3sDT-cwnSrcEPTLVLCs4ZCqxAw0N-HyDCLutlYDEA4BY_u410omBcYZf/embed?start=false&loop=false&delayms=5000"
+          // frameBorder='0'
+          width="1024"
+          height="768"
+          allowFullScreen={true}
+        ></iframe>
       </div>
     </div>
   );

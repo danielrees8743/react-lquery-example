@@ -24,6 +24,7 @@ export default function UseEffect() {
           throw new Error(`Something went wrong please check: ${res.url}`);
         }
         const data = await res.json();
+
         setIsLoading(false);
         setData(data);
         setError(null);
@@ -36,6 +37,8 @@ export default function UseEffect() {
     };
     fetchCharacters();
   }, [page]);
+
+  console.log(data);
 
   return (
     <div className="useEffect">
@@ -50,7 +53,9 @@ export default function UseEffect() {
       >
         Previous
       </button>
-      <span className="pageNum">{page}</span>
+      <span className="pageNum">
+        {page} of {data.info && data.info.pages}
+      </span>
       <button
         className="btn"
         onClick={() => setPage((old) => old + 1)}
