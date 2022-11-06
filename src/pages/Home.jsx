@@ -6,15 +6,14 @@ export default function Home() {
       <div className="content">
         <h1>What is React Query?</h1>
 
-        <iframe
+        {/* <iframe
           title="react-query presentation"
           className="presentaion"
           src="https://docs.google.com/presentation/d/e/2PACX-1vQbM5fXVCs4sLUHCZmYpzGl3sDT-cwnSrcEPTLVLCs4ZCqxAw0N-HyDCLutlYDEA4BY_u410omBcYZf/embed?start=false&loop=false&delayms=5000"
-          // frameBorder='0'
           width="1024"
           height="768"
           allowFullScreen={true}
-        ></iframe>
+        ></iframe> */}
       </div>
     </div>
   );

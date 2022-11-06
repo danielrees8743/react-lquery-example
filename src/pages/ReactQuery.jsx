@@ -9,10 +9,11 @@ import reactQueryLogo from '../assets/react-query-logo.svg';
 const ReactQuery = () => {
   const [page, setPage] = useState(1);
   const { data, isLoading, isPreviousData, isError, error } = useQuery(
-    ['richAndMorty', page],
+    ['rickAndMorty', page],
     () => fetchCharacters(page),
     {
       keepPreviousData: true,
+      retry: 3,
     }
   );
 

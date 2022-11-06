@@ -75,10 +75,3 @@ export default function UseEffect() {
     </div>
   );
 }
-
-//   return (
-//     <div>
-//       <main className="useEffect"></main>
-//     </div>
-//   );
-// }

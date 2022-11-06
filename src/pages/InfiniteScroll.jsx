@@ -24,7 +24,7 @@ const InfiniteChatacters = () => {
     hasNextPage,
     isFetcheing,
   } = useInfiniteQuery(
-    ['richAndMorty'],
+    ['rickAndMorty'],
     ({ pageParam = initialUrl }) => fetchCharacters(pageParam),
     {
       getNextPageParam: (lastPage) => lastPage.info.next || undefined,
