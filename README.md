@@ -10,7 +10,7 @@ The project is a case study to show the advantages of using a library over the s
 
 React query is described as the missing data-fetching library for React. it makes **feching, caching, synchronizing and updatinf server state in your React applications much easier**
 
-[Live Demo](react-lquery-example-5yet8fdu0-danielrees8743.vercel.app)
+[Live Demo](https://react-lquery-example-5yet8fdu0-danielrees8743.vercel.app)
 
 ## To get started with this repo
 
